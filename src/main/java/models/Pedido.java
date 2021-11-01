@@ -1,16 +1,36 @@
 
 package models;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+
 /**
  *
  * @author Katsu
  */
-public class Pedido{
+
+@Entity
+@Table(name="pedidos")
+public class Pedido implements Serializable{
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     int id;
+    @Column(name="alumno")
     String alumno;
+    @Column(name="ciclo")
     String ciclo;
+    @Column(name="fecha")
     String fecha;
+    @Column(name="estado")
     String estado;
+    @Column(name="producto_id")
     int prodId;
    // DATABASE HANDLER Long hora;
 

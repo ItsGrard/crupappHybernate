@@ -1,16 +1,33 @@
 
 package models;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Katsu
  */
-public class Producto {
+
+@Entity
+@Table(name="productos")
+public class Producto implements Serializable {
     
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+    @Column(name="producto")
     private String producto;
+    @Column(name="disponible")
     private short disponible;
+    @Column (name="precio")
     private float precio;
+    @Column(name="tipo")
     private String tipo;
 
     public Producto() {
