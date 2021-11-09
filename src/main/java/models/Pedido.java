@@ -2,6 +2,7 @@
 package models;
 
 import java.io.Serializable;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Pedido implements Serializable{
     @Column(name="ciclo")
     String ciclo;
     @Column(name="fecha")
-    String fecha;
+    Date fecha;
     @Column(name="estado")
     String estado;
     @Column(name="producto_id")
@@ -36,20 +37,24 @@ public class Pedido implements Serializable{
 
     public Pedido() {
     }
+    public Pedido(int id) {
+        this.id = id;
+    }
 
-    public Pedido(int id, String alumno, String ciclo, String estado, int prodId) {
+    public Pedido(int id, String alumno, String ciclo, String estado, int prodId, Date fecha) {
         this.id = id;
         this.alumno = alumno;
         this.ciclo = ciclo;
         this.estado = estado;
         this.prodId = prodId;
+        this.fecha = fecha;
     }
 
-    public String getFecha() {
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

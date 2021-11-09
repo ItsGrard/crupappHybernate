@@ -35,7 +35,7 @@ public class Controller implements Serializable {
             Logger.getLogger(Pedido.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+  
     static final String LIST_PRODUCTS = "SELECT * FROM productos";
     static final String CREATE_PEDIDO = "INSERT INTO pedidos(alumno,ciclo,estado, producto_id) VALUES (?,?,?,?)";
     static final String DELETE_PEDIDO = "DELETE FROM pedidos WHERE id=?";
