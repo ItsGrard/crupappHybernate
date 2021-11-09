@@ -108,7 +108,7 @@ public class Principal {
 
     public static void listarComandas(){
         
-        Query q = s.createQuery("FROM Pedido", Pedido.class);
+        Query q = s.createQuery("FROM Pedido WHERE estado = 'Pendiente'", Pedido.class);
         
         ArrayList<Pedido> qres = (ArrayList<Pedido>) q.getResultList();
         System.out.println(qres.toString());
